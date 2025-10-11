@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Lottie from "lottie-react";
 export default function AIMaxLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -288,22 +288,30 @@ export default function AIMaxLanding() {
           </div>
         </motion.section>
 
-        {/* TESTIMONIALS */}
-        <motion.section id="testimonials" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-8 text-indigo-600">What Our Clients Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <motion.div key={i} custom={i} variants={staggerVariants} className="p-6 bg-indigo-50 rounded-xl shadow flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
-                  <Image src={t.avatar} alt={t.name} width={72} height={72} className="rounded-full mb-4" />
-                  <p className="text-gray-700 italic mb-2">"{t.quote}"</p>
-                  <p className="font-semibold text-indigo-600">{t.name}</p>
-                  <p className="text-sm text-gray-500">{t.role}</p>
-                </motion.div>
-              ))}
-            </div>
+     {/* TESTIMONIALS */}
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl font-bold">Our clients achieve operational excellence</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[{
+              quote: 'Our company was struggling to keep up with the demands of our growing business until we found this automation agency.',
+              name: 'Sarah M.', role: 'Director, Finance'
+            },{
+              quote: 'I was skeptical at first about using an automation agency, but I am so glad I did.',
+              name: 'John D.', role: 'CEO'
+            },{
+              quote: "If you're looking for a way to scale your business without sacrificing your personal life, then this automation agency is the way to go.",
+              name: 'Amanda L.', role: 'VP, Operations'
+            }].map((t, i) => (
+              <div key={i} className="bg-gray-50 rounded-lg p-6">
+                <div className="text-yellow-400">★★★★★</div>
+                <p className="mt-3 text-gray-700">"{t.quote}"</p>
+                <div className="mt-4 text-sm text-gray-600">{t.name} — {t.role}</div>
+              </div>
+            ))}
           </div>
-        </motion.section>
+        </div>
+      </section>
 
         {/* CTA */}
         <motion.section id="cta" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="py-20 bg-indigo-600 text-white text-center">
