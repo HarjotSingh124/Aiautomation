@@ -10,7 +10,7 @@ export default function AIMaxLanding() {
   // CHANGE THIS if you want another WhatsApp number (include country code)
   const whatsappLink = "https://wa.me/917060569217?text=Hello%20AIMax%2C%20I%20want%20to%20book%20a%20demo";
 
-  const scrollToSection = (id) => {
+const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
