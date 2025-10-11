@@ -3,14 +3,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Lottie from "lottie-react";
+import {
+  Brain, Workflow, LineChart, TrendingUp, Clock, Smile,
+  Building2, DollarSign, Zap, Bot, Wrench, BarChart3,
+  Cpu, MessageSquare, Cog, Cloud, Wifi
+} from "lucide-react";
+
 export default function AIMaxLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // CHANGE THIS if you want another WhatsApp number (include country code)
-  const whatsappLink = "https://wa.me/917060569217?text=Hello%20AIMax%2C%20I%20want%20to%20book%20a%20demo";
+  const whatsappLink =
+    "https://wa.me/917060569217?text=Hello%20AIMax%2C%20I%20want%20to%20book%20a%20demo";
 
-const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
@@ -23,7 +28,7 @@ const scrollToSection = (id: string) => {
 
   const staggerVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.12, duration: 0.45 },
@@ -34,17 +39,17 @@ const scrollToSection = (id: string) => {
     {
       title: "AI Strategy & Planning",
       desc: "We audit your operations and identify high-impact AI opportunities — prioritized by ROI and ease of integration.",
-      lottie: "https://assets7.lottiefiles.com/packages/lf20_t3pU1m.json" // strategy-like animation
+      icon: Brain,
     },
     {
       title: "Seamless Integration",
       desc: "We connect AI to your PMS, CRM, booking systems and APIs — no disruption to daily operations.",
-      lottie: "https://assets10.lottiefiles.com/packages/lf20_49rdyysj.json" // workflow/connect animation
+      icon: Workflow,
     },
     {
       title: "Continuous Optimization",
       desc: "AI models are monitored and retrained; dashboards show impact so you scale what works quickly.",
-      lottie: "https://assets2.lottiefiles.com/packages/lf20_jz8muk.json" // analytics/optimization animation
+      icon: LineChart,
     },
   ];
 
@@ -52,17 +57,17 @@ const scrollToSection = (id: string) => {
     {
       title: "Increase Revenue",
       desc: "Dynamic pricing and targeted upsells increase occupancy and RevPAR without manual work.",
-      lottie: "https://assets6.lottiefiles.com/packages/lf20_x62chJ.json" // growth chart
+      icon: TrendingUp,
     },
     {
       title: "Save Time & Costs",
       desc: "Automate repetitive tasks (emails, follow-ups, scheduling) and reallocate staff to high-value work.",
-      lottie: "https://assets7.lottiefiles.com/packages/lf20_w51pcehl.json" // automation
+      icon: Clock,
     },
     {
       title: "Better Guest Experience",
       desc: "AI provides instant, personalized recommendations and support — improving NPS and reviews.",
-      lottie: "https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json" // chatbot/ux
+      icon: Smile,
     },
   ];
 
@@ -70,72 +75,57 @@ const scrollToSection = (id: string) => {
     {
       title: "Smart Property Management",
       desc: "Automate tenant comms, rent reminders, guest check-in flows and document handling.",
-      lottie: "https://assets2.lottiefiles.com/packages/lf20_0yfsb3a1.json"
+      icon: Building2,
     },
     {
       title: "Dynamic Pricing & Revenue Optimization",
       desc: "Auto-adjust prices based on demand, events, and historical patterns to maximize income.",
-      lottie: "https://assets6.lottiefiles.com/packages/lf20_x62chJ.json"
+      icon: DollarSign,
     },
     {
       title: "Automated Lead Generation",
       desc: "Capture leads, qualify them with AI, and automatically deliver targeted follow-ups to increase conversions.",
-      lottie: "https://assets10.lottiefiles.com/private_files/lf30_jzv7x9s6.json"
+      icon: Zap,
     },
     {
       title: "AI Concierge Services",
       desc: "Offer 24/7 guest assistance, booking changes, and local recommendations with a friendly AI assistant.",
-      lottie: "https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json"
+      icon: Bot,
     },
     {
       title: "Maintenance Prediction",
       desc: "Predict equipment failures and schedule maintenance automatically to avoid downtime and cut costs.",
-      lottie: "https://assets7.lottiefiles.com/packages/lf20_w51pcehl.json"
+      icon: Wrench,
     },
     {
       title: "Analytics & Smart Dashboards",
       desc: "Clear dashboards with KPIs, trends and AI recommendations so managers act with confidence.",
-      lottie: "https://assets2.lottiefiles.com/packages/lf20_jz8muk.json"
+      icon: BarChart3,
     },
   ];
 
   const technologies = [
-    { title: "Machine Learning", desc: "Predictive models for pricing, demand, and risk.", lottie: "https://assets7.lottiefiles.com/packages/lf20_t3pU1m.json" },
-    { title: "Natural Language Processing", desc: "Understand guest messages and automate conversations.", lottie: "https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json" },
-    { title: "Robotic Process Automation", desc: "Automate repetitive backend tasks across systems.", lottie: "https://assets7.lottiefiles.com/packages/lf20_w51pcehl.json" },
-    { title: "Predictive Analytics", desc: "Turn historical data into proactive decisions.", lottie: "https://assets2.lottiefiles.com/packages/lf20_jz8muk.json" },
-    { title: "Computer Vision", desc: "Automate inspections, images & security checks.", lottie: "https://assets4.lottiefiles.com/packages/lf20_snmohqxz.json" },
-    { title: "Chatbots & Assistants", desc: "Instant support and upsell flows via chat.", lottie: "https://assets9.lottiefiles.com/packages/lf20_0yfsb3a1.json" },
-    { title: "IoT Integration", desc: "Connect sensors and devices for smarter operations.", lottie: "https://assets3.lottiefiles.com/packages/lf20_3vbOcw.json" },
-    { title: "Cloud AI Platforms", desc: "Scale AI with secure cloud infra.", lottie: "https://assets5.lottiefiles.com/packages/lf20_x62chJ.json" },
+    { title: "Machine Learning", desc: "Predictive models for pricing, demand, and risk.", icon: Brain },
+    { title: "Natural Language Processing", desc: "Understand guest messages and automate conversations.", icon: MessageSquare },
+    { title: "Robotic Process Automation", desc: "Automate repetitive backend tasks across systems.", icon: Cog },
+    { title: "Predictive Analytics", desc: "Turn historical data into proactive decisions.", icon: LineChart },
+    { title: "Computer Vision", desc: "Automate inspections, images & security checks.", icon: Cpu },
+    { title: "Chatbots & Assistants", desc: "Instant support and upsell flows via chat.", icon: Bot },
+    { title: "IoT Integration", desc: "Connect sensors and devices for smarter operations.", icon: Wifi },
+    { title: "Cloud AI Platforms", desc: "Scale AI with secure cloud infra.", icon: Cloud },
   ];
-
-  const testimonials = [
-    { name: "Hotel Manager", role: "Luxury Hotel", avatar: "/avatars/hotel1.png", quote: "AIMax transformed our hotel operations — guest satisfaction jumped, and staff focus shifted to VIP guests." },
-    { name: "Real Estate Agency", role: "Property Management", avatar: "/avatars/realestate.png", quote: "We automated tenant onboarding and maintenance workflows — saved dozens of hours weekly." },
-    { name: "Investor", role: "Private Investments", avatar: "/avatars/investor.png", quote: "Data-driven insights helped us pick high-performing properties and time purchases better." },
-  ];
-
-  // small helper to render lottie web component safely in React
-  const LottiePlayer = ({ src, style = {} }) => (
-    // using lottie-player web component — it works in client components
-    // note: we rely on LottieFiles CDN animation URLs (public JSON)
-    <lottie-player
-      src={src}
-      background="transparent"
-      speed="1"
-      loop
-      autoplay
-      style={style}
-    />
-  );
 
   return (
     <div className="min-h-screen font-sans text-gray-900 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* NAVBAR */}
       <header className="fixed w-full bg-white/70 backdrop-blur z-40">
         <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4 cursor-pointer font-bold text-indigo-600 text-xl" onClick={() => scrollToSection("hero")}>AIMax Automation</div>
+          <div
+            className="flex items-center gap-4 cursor-pointer font-bold text-indigo-600 text-xl"
+            onClick={() => scrollToSection("hero")}
+          >
+            AIMax Automation
+          </div>
           <ul className="hidden md:flex gap-6 text-sm">
             <li onClick={() => scrollToSection("howAI")} className="cursor-pointer hover:text-indigo-500 transition-colors">How AI Works</li>
             <li onClick={() => scrollToSection("useCases")} className="cursor-pointer hover:text-indigo-500 transition-colors">Use Cases</li>
@@ -143,7 +133,14 @@ const scrollToSection = (id: string) => {
             <li onClick={() => scrollToSection("testimonials")} className="cursor-pointer hover:text-indigo-500 transition-colors">Testimonials</li>
             <li onClick={() => scrollToSection("cta")} className="cursor-pointer hover:text-indigo-500 transition-colors">Book Demo</li>
           </ul>
-          <a href={whatsappLink} target="_blank" rel="noreferrer" className="hidden md:block px-4 py-2 border rounded-md text-sm hover:bg-indigo-600 hover:text-white transition-colors">Book Demo</a>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:block px-4 py-2 border rounded-md text-sm hover:bg-indigo-600 hover:text-white transition-colors"
+          >
+            Book Demo
+          </a>
           <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>☰</button>
         </nav>
 
@@ -166,7 +163,7 @@ const scrollToSection = (id: string) => {
               Revolutionize Your Real Estate & Hospitality Business with AI
             </motion.h1>
             <p className="mt-6 text-gray-700">
-              Automate operations, enhance guest experience, and maximize revenue with intelligent AI-driven solutions. AIMax combines predictive analytics, automation, and actionable insights to give your business a competitive edge.
+              Automate operations, enhance guest experience, and maximize revenue with intelligent AI-driven solutions.
             </p>
 
             <ul className="mt-4 text-gray-700 list-disc list-inside space-y-1">
@@ -176,78 +173,31 @@ const scrollToSection = (id: string) => {
             </ul>
 
             <div className="mt-8 flex gap-4">
-              <motion.a
-                href={whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition"
-              >
-                Book a Demo
-              </motion.a>
-
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => scrollToSection("howAI")}
-                className="px-6 py-3 rounded-md border hover:bg-gray-100 transition"
-              >
-                See How It Works
-              </motion.button>
+              <motion.a href={whatsappLink} target="_blank" rel="noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition">Book a Demo</motion.a>
+              <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} onClick={() => scrollToSection("howAI")} className="px-6 py-3 rounded-md border hover:bg-gray-100 transition">See How It Works</motion.button>
             </div>
           </div>
 
-          <motion.div className="relative h-80 md:h-96 rounded-xl shadow-xl overflow-hidden" variants={sectionVariants}>
-            {/* Hero video (keep if you have it) else replace with a nice Lottie */}
-            <video src="/videos/hero-ai.mp4" autoPlay loop muted className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-indigo-800 bg-opacity-20"></div>
+          <motion.div className="relative h-80 md:h-96 rounded-xl shadow-xl overflow-hidden flex items-center justify-center bg-indigo-100">
+            <Brain className="w-40 h-40 text-indigo-500" />
           </motion.div>
         </motion.section>
 
-        {/* HOW AI WORKS - stylish cards with Lottie */}
+        {/* HOW AI WORKS */}
         <motion.section id="howAI" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="py-20 bg-gradient-to-r from-indigo-50 via-white to-indigo-50">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-8 text-indigo-600 text-center">How AI Works — Our Proven Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {howAI.map((item, i) => (
-                <motion.div key={i} custom={i} variants={staggerVariants} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
-                  <div className="w-36 h-36 mb-4">
-                    <LottieSafe src={item.lottie} />
-                  </div>
-                  <h3 className="font-semibold text-indigo-600 mb-2">{item.title}</h3>
-                  <p className="text-gray-700 text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* WHY AI HELPS - split layout with Lottie */}
-        <motion.section id="whyAIHelps" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="py-20 bg-gradient-to-r from-white via-indigo-50 to-white">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4 text-indigo-600">Why AI & Automation Help You</h2>
-              <p className="text-gray-700 mb-4">AI reduces manual overhead, minimizes errors, and finds growth opportunities hidden in data. Below are the core benefits we deliver consistently:</p>
-
-              <div className="grid gap-4">
-                {whyAI.map((item, i) => (
-                  <motion.div key={i} custom={i} variants={staggerVariants} className="bg-white rounded-xl p-4 shadow flex items-start gap-4 hover:shadow-xl transition">
-                    <div className="w-14 h-14 flex-shrink-0">
-                      <LottieSafe src={item.lottie} style={{ width: '56px', height: '56px' }} />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-semibold text-indigo-600">{item.title}</h3>
-                      <p className="text-gray-700 text-sm">{item.desc}</p>
-                    </div>
+              {howAI.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div key={i} custom={i} variants={staggerVariants} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <Icon className="w-16 h-16 text-indigo-500 mb-4" />
+                    <h3 className="font-semibold text-indigo-600 mb-2">{item.title}</h3>
+                    <p className="text-gray-700 text-sm">{item.desc}</p>
                   </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="w-full h-72 md:h-80 flex items-center justify-center">
-              {/* A big analytics Lottie */}
-              <LottieSafe src="https://assets2.lottiefiles.com/packages/lf20_jz8muk.json" style={{ width: '100%', height: '100%' }} />
+                );
+              })}
             </div>
           </div>
         </motion.section>
@@ -257,15 +207,16 @@ const scrollToSection = (id: string) => {
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-8 text-indigo-600">Use Cases — Where AIMax Adds Value</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {useCases.map((uc, i) => (
-                <motion.div key={i} custom={i} variants={staggerVariants} className="bg-indigo-50 rounded-2xl p-6 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
-                  <div className="w-32 h-32 mb-4">
-                    <LottieSafe src={uc.lottie} />
-                  </div>
-                  <h3 className="font-semibold text-indigo-700 mb-2">{uc.title}</h3>
-                  <p className="text-gray-700 text-sm">{uc.desc}</p>
-                </motion.div>
-              ))}
+              {useCases.map((uc, i) => {
+                const Icon = uc.icon;
+                return (
+                  <motion.div key={i} custom={i} variants={staggerVariants} className="bg-indigo-50 rounded-2xl p-6 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-1">
+                    <Icon className="w-14 h-14 text-indigo-500 mb-3" />
+                    <h3 className="font-semibold text-indigo-700 mb-2">{uc.title}</h3>
+                    <p className="text-gray-700 text-sm">{uc.desc}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.section>
@@ -275,58 +226,45 @@ const scrollToSection = (id: string) => {
           <div className="max-w-6xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-8 text-indigo-600">Technologies We Use</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {technologies.map((tech, i) => (
-                <motion.div key={i} custom={i} variants={staggerVariants} className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-xl transition transform hover:-translate-y-1">
-                  <div className="w-24 h-24 mb-3">
-                    <LottieSafe src={tech.lottie} />
-                  </div>
-                  <p className="font-medium text-gray-700">{tech.title}</p>
-                  <p className="text-sm text-gray-500 mt-1">{tech.desc}</p>
-                </motion.div>
-              ))}
+              {technologies.map((tech, i) => {
+                const Icon = tech.icon;
+                return (
+                  <motion.div key={i} custom={i} variants={staggerVariants} className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-xl transition transform hover:-translate-y-1">
+                    <Icon className="w-12 h-12 text-indigo-500 mb-3" />
+                    <p className="font-medium text-gray-700">{tech.title}</p>
+                    <p className="text-sm text-gray-500 mt-1">{tech.desc}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.section>
 
-     {/* TESTIMONIALS */}
-      <section className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-bold">Our clients achieve operational excellence</h2>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[{
-              quote: 'Our company was struggling to keep up with the demands of our growing business until we found this automation agency.',
-              name: 'Sarah M.', role: 'Director, Finance'
-            },{
-              quote: 'I was skeptical at first about using an automation agency, but I am so glad I did.',
-              name: 'John D.', role: 'CEO'
-            },{
-              quote: "If you're looking for a way to scale your business without sacrificing your personal life, then this automation agency is the way to go.",
-              name: 'Amanda L.', role: 'VP, Operations'
-            }].map((t, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-6">
-                <div className="text-yellow-400">★★★★★</div>
-                <p className="mt-3 text-gray-700">"{t.quote}"</p>
-                <div className="mt-4 text-sm text-gray-600">{t.name} — {t.role}</div>
-              </div>
-            ))}
+        {/* TESTIMONIALS */}
+        <section id="testimonials" className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-2xl font-bold">Our clients achieve operational excellence</h2>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { quote: 'AIMax helped us automate check-ins and boost guest satisfaction instantly.', name: 'Sarah M.', role: 'Hotel Director' },
+                { quote: 'We reduced manual data entry by 80% — the automation ROI is amazing.', name: 'John D.', role: 'Operations Head' },
+                { quote: "AI dashboards helped us see where to invest — brilliant insights!", name: 'Amanda L.', role: 'Real Estate Investor' },
+              ].map((t, i) => (
+                <div key={i} className="bg-gray-50 rounded-lg p-6 shadow">
+                  <div className="text-yellow-400">★★★★★</div>
+                  <p className="mt-3 text-gray-700">"{t.quote}"</p>
+                  <div className="mt-4 text-sm text-gray-600">{t.name} — {t.role}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* CTA */}
         <motion.section id="cta" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="py-20 bg-indigo-600 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-          <p className="mb-6 text-lg">Book a demo and see how AIMax Automation can elevate your real estate or hotel operations with AI-driven solutions.</p>
-          <motion.a
-            href={whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 bg-white text-indigo-600 rounded-md font-semibold hover:bg-gray-100 transition"
-          >
-            Book a Demo on WhatsApp
-          </motion.a>
+          <p className="mb-6 text-lg">Book a demo and see how AIMax Automation can elevate your operations with AI-driven solutions.</p>
+          <motion.a href={whatsappLink} target="_blank" rel="noreferrer" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="px-6 py-3 bg-white text-indigo-600 rounded-md font-semibold hover:bg-gray-100 transition">Book a Demo on WhatsApp</motion.a>
         </motion.section>
 
         {/* FOOTER */}
@@ -334,31 +272,15 @@ const scrollToSection = (id: string) => {
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div className="h-24 flex items-center justify-center md:justify-start">© 2025 AIMax Automation</div>
             <div className="h-24 flex items-center justify-center cursor-pointer hover:text-white transition">Privacy Policy</div>
-            <div className="h-24 flex items-center justify-center md:justify-end">Contact: <a href={whatsappLink} target="_blank" rel="noreferrer" className="hover:text-white transition ml-2">WhatsApp</a></div>
+            <div className="h-24 flex items-center justify-center md:justify-end">
+              Contact: <a href={whatsappLink} target="_blank" rel="noreferrer" className="hover:text-white transition ml-2">WhatsApp</a>
+            </div>
           </div>
         </footer>
       </main>
     </div>
   );
 }
-
-/* ---------- Helper Lottie wrapper (keeps React happy) ---------- */
-/**
- * We declare LottieSafe as a top-level function (outside default export)
- * so JSX recognizes the web component usage cleanly.
- *
- * Note: We create it below to avoid import issues and keep things client-side.
- */
-function LottieSafe({ src, style }) {
-  // render a lottie-player element; it's safe in client components
-  // You can adjust attributes (speed, loop, autoplay) as needed.
-  return (
-    <div dangerouslySetInnerHTML={{
-      __html: `<lottie-player src="${src}" background="transparent" speed="1" loop autoplay style="${style?.width ? `width:${style.width};height:${style.height || style.width}` : (style ? Object.entries(style).map(([k,v])=>`${k}:${v}`).join(';') : '')}"></lottie-player>`
-    }} />
-  );
-}
-
 
 
 // /* eslint-disable react/no-unescaped-entities */
